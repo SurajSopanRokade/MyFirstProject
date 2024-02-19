@@ -1,0 +1,20 @@
+<p>emp-routs works!</p>
+<!-- <ul *ngIf="usersdata">
+    <li><img src={{usersdata.avatar}}></li>
+    <li>{{usersdata.id}}</li>
+    <li>{{usersdata.first_name}}</li>
+    <li>{{usersdata.last_name}}</li>
+    <li>{{usersdata.email}}</li>
+</ul> -->
+
+<div>
+<ul *ngIf="usersdata">
+    <li><img src="{{usersdata.avatar}}"></li>
+    <li>{{usersdata.id}}</li>
+    <li>{{usersdata.first_name}}</li>
+    <li>{{usersdata.last_name}}</li>
+    <li>{{usersdata.email}}</li>
+</ul>
+</div>
+<button (click)="goBack()" class="btn btn-warning">Return</button>
+

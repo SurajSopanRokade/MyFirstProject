@@ -1,0 +1,72 @@
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && OnSubmit()" novalidate>
+    <div>
+        <label>fullName</label>
+        <input type="text" class="form-control" name="fullName" 
+        [(ngModel)]="form.fullName" required  #fullName="ngModel" 
+        [ngClass]="{'is-invalid':f.submitted && fullName.errors}">
+        @if(f.submitted && fullName.errors){
+            @if(fullName.errors['required']){
+                <div>FullName is required</div>
+            }
+        }
+    </div>
+    <div>
+        <label>userName</label>
+        <input type="text" class="form-control" name="userName" 
+        [(ngModel)]="form.userName" required  #userName="ngModel" minlength="6" maxlength="20"
+        [ngClass]="{'is-invalid':f.submitted && userName.errors}">
+        @if(f.submitted && userName.errors){
+            @if(userName.errors['required']){
+                <div>userName is required</div>
+            }
+            @if(userName.errors['minlength']){
+                <div>userName must have at least 6 char</div>
+            }
+            @if(userName.errors['maxlength']){
+                <div>userName must have at max 20 char</div>
+            }
+        }
+    </div>
+    <div>
+        <label>email</label>
+        <input type="text" class="form-control" name="email" 
+        [(ngModel)]="form.email" required  #fullName="ngModel" 
+        [ngClass]="{'is-invalid':f.submitted && email.errors}">
+        @if(f.submitted && email.errors){
+            @if(email.errors['required']){
+                <div>email is required</div>
+            }
+            @if(email.errors['email']){
+                <div>email is invalid</div>
+            }
+        }
+    </div>
+    <div>
+        <label>password</label>
+        <input type="password" class="form-control" name="password" 
+        [(ngModel)]="form.password" required  #password="ngModel" 
+        [ngClass]="{'is-invalid':f.submitted && password.errors}">
+        @if(f.submitted && password.errors){
+            @if(password.errors['required']){
+                <div>password is required</div>
+            }
+            @if(password.errors['minlength']){
+                <div>minimum 6 char required</div>
+            }
+        }
+    </div>
+    <div>
+        <input type="checkbox" class="form-control" name="acceptTerms" 
+        [(ngModel)]="form.acceptTerms" class="form-check-input" required #acceptTerms="ngModel" 
+        [ngClass]="{'is-invalid':f.submitted && acceptTerms.errors}">
+        <label>I have read and agree to terms</label>
+        @if(f.submitted && acceptTerms.errors){
+            <div>acceptTerms is required</div>
+        }
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-warning" (click)="OnReset()">Reset</button>
+    </div>
+
+</form>

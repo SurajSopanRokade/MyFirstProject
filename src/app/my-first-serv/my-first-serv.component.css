@@ -1,0 +1,10 @@
+table, tr, td, th{
+    margin-left: 3rem;
+    border: 400px;
+    border: 2px solid black;
+}
+.Empform{
+    margin-left: 3rem;
+    display: flex;
+    gap: 3rem;
+}

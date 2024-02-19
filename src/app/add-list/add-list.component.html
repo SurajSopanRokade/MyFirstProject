@@ -1,0 +1,9 @@
+<p>add-list works!</p>
+
+
+<input type="text" [(ngModel)]='cname'><br>
+<button (click)="addCourse()">click</button>
+
+<ul>
+    <li *ngFor="let c of list" [style.backgroundColor]="c.colorname" (click)="checkitem(c)">{{c.coursename}}</li>
+</ul>

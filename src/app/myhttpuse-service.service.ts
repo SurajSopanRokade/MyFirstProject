@@ -1,0 +1,58 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, catchError, throwError } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyhttpuseServiceService {
+  // url="assets/User.json"
+ //url="https://reqres.in/api/users?page=2"
+
+ url="http://localhost:3000/dataemp"
+ constructor(public myhttpclient:HttpClient) { }
+
+ getData()
+ {
+   return this.myhttpclient.get(this.url)
+ }
+
+ deleteData(id:any):Observable<any>{
+   return this.myhttpclient.delete<any>(this.url+"/"+id).pipe(
+     catchError(this.errorHandler)
+   )
+ }
+
+ saveData(emp:any):Observable<any>{
+   let empdata={id:emp.id,name:emp.name,salary:parseInt(emp.salary)}
+   return this.myhttpclient.post<any>(this.url,empdata).pipe(
+     catchError(this.errorHandler)
+   )
+ }
+
+ public updateEmp(id:any,emp:any):Observable<any>{
+   console.log(id+"/////////////")
+   return this.myhttpclient.put<any>(`${this.url}/${id}`,emp).pipe(
+     catchError(this.errorHandler)
+   )
+ }
+ 
+
+
+ errorHandler(error:any)
+ {
+     let errorMessage=""
+     if(error.error instanceof ErrorEvent)
+     {
+       errorMessage=error.error.message
+     }
+     else{
+       errorMessage=`Error Code: ${error.status} \n Message:${error.message}`
+     }
+     
+     return throwError(()=>new Error(errorMessage))
+ }
+
+
+
+}

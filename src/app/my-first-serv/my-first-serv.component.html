@@ -1,0 +1,70 @@
+
+<table>
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>NAme</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+   <!-- @for(emp of employee;track emp) -->
+    <!-- { -->
+    <tr *ngFor="let emp of employee">
+        <td>{{emp.eid}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.salary}}</td>
+        <td><input type="button"  value="Edit" class="btn btn-warning" (click)="editEmp(emp)"> &nbsp;&nbsp;
+        <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteEmp(emp.eid)"></td>
+    </tr>
+<!-- } -->
+</tbody>
+</table>
+
+<br><br>
+<!-- original -->
+<!-- <form [formGroup]="empform" (ngSubmit)="SaveData()">
+    <label for="id">EmployeeID</label>
+    <input type="text" placeholder="Employeeid" required class="form-control" formControlName="eid"  id="eid">
+    
+    <label for="name">EmployeeName</label>
+    <input type="text" placeholder="EmployeeName" required class="form-control" formControlName="ename" id="ename">
+
+    <label for="Salary">Salary</label>
+    <input type="text" placeholder="Salary" required class="form-control"  formControlName="salary" id="salary">&nbsp;<br>
+    <input type="submit"  class="btn btn-success"  value="AddEmp">&nbsp;&nbsp;
+
+    <input type="submit"  class="btn btn-light"  value="Update">&nbsp;&nbsp;
+    <input type="button"  class="btn btn-primary" value="Cancel"  (click)="clearForm()">
+</form> -->
+<div class="Empform">
+<form [formGroup]="empform" (ngSubmit)="SaveData()">
+    <label for="id">EmployeeID</label>
+    <input type="text" placeholder="Employeeid" required class="form-control" formControlName="eid"  id="eid">
+    
+    <label for="name">EmployeeName</label>
+    <input type="text" placeholder="EmployeeName" required class="form-control" formControlName="ename" id="ename">
+
+    <label for="Salary">Salary</label>
+    <input type="text" placeholder="Salary" required class="form-control"  formControlName="salary" id="salary">&nbsp;<br>
+    <input type="submit"  class="btn btn-success"  value="AddEmp">&nbsp;&nbsp;
+
+    <input type="button"  class="btn btn-primary" value="Cancel"  (click)="clearForm()">
+</form>
+
+<form [formGroup]="empform" (ngSubmit)="SaveData()">
+    <label for="id">EmployeeID</label>
+    <input type="text" placeholder="Employeeid" required class="form-control" formControlName="eid"  id="eid">
+    
+    <label for="name">EmployeeName</label>
+    <input type="text" placeholder="EmployeeName" required class="form-control" formControlName="ename" id="ename">
+
+    <label for="Salary">Salary</label>
+    <input type="text" placeholder="Salary" required class="form-control"  formControlName="salary" id="salary">&nbsp;<br>
+    <input type="submit"  class="btn btn-info"  value="Update">&nbsp;&nbsp;
+
+    <input type="button"  class="btn btn-primary" value="Cancel"  (click)="clearForm()">
+</form>
+
+</div>
+
+

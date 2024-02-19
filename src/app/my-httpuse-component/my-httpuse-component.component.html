@@ -1,0 +1,21 @@
+<p>my-httpuse-component works!</p>
+<table>
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <th>First-Name</th>
+        <th>last-Name</th>
+        <th>email</th>
+        <th>Avatar</th>
+    </tr>
+    @for(use of user; track use){
+        <tr>
+            <td><a [routerLink]="['/EmpData',use.id]">{{use.id}}</a></td>
+            <td>{{use.first_name}}</td>
+            <td>{{use.last_name}}</td>
+            <td>{{use.email}}</td>
+            <td><img src={{use.avatar}}></td>
+        </tr>
+    }
+</tbody>
+</table>

@@ -1,0 +1,24 @@
+
+
+
+<p><b>List of Courses</b></p>
+
+<ol>
+    <li>CSS</li>
+    <li>Java</li>
+    <li>C#</li>
+    <li>Html</li>
+    <li>Angular</li>
+</ol>
+<br>
+Enter a Number of Course : <input type="text" [(ngModel)]="number">
+<button (click)="Enroll()">Click Me</button>
+<div [ngSwitch]="number">
+    <div *ngSwitchCase="'1'"><b>You have Selected a CSS</b></div>
+    <div *ngSwitchCase="'2'"><b>You have Selected a Java</b></div>
+    <div *ngSwitchCase="'3'"><b>You have Selected a C#</b></div>
+    <div *ngSwitchCase="'4'"><b>You have Selected a Html</b></div>
+    <div *ngSwitchCase="'5'"><b>You have Selected a Angular</b></div>
+    <div *ngSwitchDefault>Please Select One Course</div>    
+</div>
+<br><br>

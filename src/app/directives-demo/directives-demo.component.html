@@ -1,0 +1,300 @@
+<!-- using ngif -->
+<!-- <button (click)="show=!show">{{show?'show':'hide'}}</button>
+<div *ngIf = "show">Text to show</div><br><br> -->
+
+<!-- {{'show = '+show}} -->
+
+<!-- using ngelse -->
+<!-- <button (click)="show=!show">ClickMe</button>
+<div *ngIf = "show else elseBlock">Text to show</div><br><br>
+<ng-template #elseBlock><div>Text to Hide</div></ng-template> -->
+
+<!-- person eligible for vote -->
+<!-- Enter the age=<input type="text" [(ngModel)]="age"><br>
+<div *ngIf="age>18 else ageCheck">person is eligible for vote</div>
+<ng-template #ageCheck ><div>Person is not eligible for vote</div></ng-template> -->
+
+<!-- switchDemo -->
+
+<!-- <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">This is red</div>
+    <div *ngSwitchCase="'blue'">This is blue</div>
+    <div *ngSwitchCase="'yellow'">This is yellow</div>
+    <div *ngSwitchDefault>Pick a color</div>
+</div>
+<input type="text" [(ngModel)]="color"><br><br> -->
+
+
+<!-- write a code to check greatest number between two numbers -->
+<!-- Enter number = <input type="number" [(ngModel)]="num1"><br><br>
+Enter number = <input type="number" [(ngModel)]="num2"><br><br>
+<div *ngIf="num1>num2 else elseBlock">{{num1}}</div>
+<ng-template #elseBlock><div>{{num2}}</div></ng-template> -->
+
+<!-- check number is odd or even -->
+<!-- Enter number = <input type="number" [(ngModel)]="numcheck"><br><br> -->
+<!-- <div *ngIf="numcheck%2==0 else elseBlock">Even</div>
+<ng-template #elseBlock><div>Odd</div></ng-template> -->
+
+<!-- check number is divisible by 5 or not -->
+<!-- Enter number = <input type="number" [(ngModel)]="numcheck2"><br><br> -->
+<!-- <div *ngIf="numcheck2%5==0 else elseBlock">Divisible by 5</div>
+<ng-template #elseBlock><div>Not Divisible by 5</div></ng-template> -->
+
+<!-- write a code to take a number from user and display that number in word  -->
+<!-- Enter number = <input type="number" [(ngModel)]="snum"><br><br> -->
+<!-- <div [ngSwitch]="snum">
+    <div *ngSwitchCase="1">One</div>
+    <div *ngSwitchCase="2">Two</div>
+    <div *ngSwitchCase="3">Three</div>
+    <div *ngSwitchCase="4">Four</div>
+    <div *ngSwitchCase="5">Five</div>
+    <div *ngSwitchDefault>NAN</div>
+</div> -->
+
+<!-- write a code to take a weekly name from user and display name of day -->
+<!-- Enter number of day = <input type="number" [(ngModel)]="wnum"><br><br>
+<div [ngSwitch]="wnum">
+    <div *ngSwitchCase="1">Sun</div>
+    <div *ngSwitchCase="2">Mon</div>
+    <div *ngSwitchCase="3">Tue</div>
+    <div *ngSwitchCase="4">Wed</div>
+    <div *ngSwitchCase="5">Thu</div>
+    <div *ngSwitchCase="6">Fri</div>
+    <div *ngSwitchCase="7">Sat</div>
+    <div *ngSwitchDefault>Unknown</div>
+</div> -->
+
+<!-- ngFor demo -->
+<!-- <table>
+  <tbody>
+    <tr>
+        <td>Eid</td>
+        <td>Ename</td>
+        <td>Salary</td>
+        <td>Index</td>
+    </tr>
+    <tr *ngFor="let emp of employee let i=index">
+        <td>{{emp.eid}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{i}}</td>
+    </tr>
+    <tr *ngIf="employee.length==0">
+        <td colspan="4">Employee Data is absent</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- movie assignment -->
+<!-- <table>
+  <tbody>
+    <tr>
+        <th>mtitle</th>
+        <th>director</th>
+        <th>ticket</th>
+        <th>releaseDate</th>
+    </tr>
+    <tr *ngFor="let mov of movie let i=index">
+        <td>{{mov.mtitle}}</td>
+        <td>{{mov.director}}</td>
+        <td>{{mov.ticket}}</td>
+        <td>{{mov.releaseDate}}</td>
+        <td>{{i}}</td>
+    </tr>
+    <tr *ngIf="movie.length==0">
+        <td colspan="4">Movie Data is absent</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- oddposition -->
+<!-- <table>
+  <tbody>
+    <tr>
+        <th>mtitle</th>
+        <th>director</th>
+        <th>ticket</th>
+        <th>releaseDate</th>
+    </tr>
+  
+   
+    <ng-container *ngFor="let mov of movie; let i = index">
+   
+    <ng-container *ngIf="i % 2 === 0">
+      <tr>
+      
+        <td>{{ mov.mtitle }}</td>
+        <td>{{ mov.director }}</td>
+        <td>{{ mov.ticket }}</td>
+        <td>{{ mov.releaseDate }}</td>
+        <td>{{ i }}</td>
+      </tr>
+    </ng-container>
+    </ng-container>
+
+  </tbody>
+</table>
+
+
+<table>
+  <tbody>
+<tr>
+    <th>sid</th>
+    <th>sname</th>
+    <th>Marks</th>
+</tr>
+<ng-container *ngFor="let std of student; let i = index">
+      <tr>
+        <td>{{ std.sid }}</td>
+        <td>{{ std.sname}}</td>
+        <td>{{ std.Marks}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table> -->
+
+<!-- display students marks more than 60 -->
+
+<!-- <table>
+  <tbody>
+    <tr>
+        <th>sid</th>
+        <th>sname</th>
+        <th>Marks</th>
+    </tr>
+    <ng-container *ngFor="let std of student; let i = index">
+        <ng-container *ngIf="std.Marks > 60">
+          <tr>
+            <td>{{ std.sid }}</td>
+            <td>{{ std.sname}}</td>
+            <td>{{ std.Marks}}</td>
+          </tr>
+    </ng-container>
+    </ng-container>
+  </tbody>
+</table> -->
+
+<!-- Employees2 table -->
+<!-- <table>
+  <tbody>
+    <tr>
+        <th>code</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>annualsalary</th>
+        <th>DateOfBirth</th>
+    </tr>
+   
+    <ng-container *ngFor="let emp2 of employee2">
+   
+   
+      <tr>
+       
+        <td>{{ emp2.code | uppercase}}</td>
+        <td>
+            <ng-container *ngIf="emp2.gender === 'male'">
+              MR.{{ emp2.name | uppercase }}
+            </ng-container>
+            <ng-container *ngIf="emp2.gender !== 'male'">
+              MISS.{{ emp2.name | uppercase }}
+            </ng-container>
+          </td>
+        <td>{{ emp2.gender}}</td>
+        <td>{{ emp2.annualsalary |currency:'USD'}}</td>
+        <td>{{ emp2.DateOfBirth | date:'fullDate'}}</td>
+      </tr>
+    
+    </ng-container>
+  </tbody>
+</table> -->
+
+<!-- if else age instead of ngIf else -->
+Enter age:<input type="text" [(ngModel)]="age"><br><br>
+<!-- @if(age>18){
+  person is eligible
+}
+@else{
+  person is not eligible
+} -->
+
+<!-- check number is positive, negative or zero -->
+<!-- @if(age>0){
+  Number is positive
+}
+@else if(age==0){
+  Number is Zero
+}
+@else{
+  Number is negative
+} -->
+
+<!-- use of for -->
+<!-- <table>
+  <tbody>
+ <th>EId</th>
+ <th>ename</th>
+ <th>salary</th>
+@for(emp of employee; track emp){
+  <tr>
+  <td>{{emp.eid}}</td>
+  <td>{{emp.ename}}</td>
+  <td>{{emp.salary}}</td>
+</tr>
+}
+
+</tbody>
+</table> -->
+
+<!-- switch using angular -->
+<!-- Choose color:<input type="text" [(ngModel)]="color">
+@switch(color){
+  @case('red'){
+    <h1>You selected <span style="color: red;">Red</span> color</h1>
+  }
+  @case('green'){
+    <h1>You selected <span style="color: green;">Green</span> color</h1>
+  }
+  @case('blue'){
+    <h1>You selected <span style="color: blue;">Blue</span> color</h1>
+  }
+} -->
+
+<!-- Assignment on if else switch without ng -->
+<!-- check number is even or odd -->
+<!-- Even Odd check :<input type="text" [(ngModel)]="num"><br><br>
+@if(num%2==0){
+  number is even
+}
+@else{
+  number is odd
+} -->
+
+<!-- find greatest number between 3 numbers -->
+<!-- num1 :<input type="number" [(ngModel)]="num1"><br><br>
+num2 :<input type="number" [(ngModel)]="num2"><br><br>
+num3 :<input type="number" [(ngModel)]="num3"><br><br>
+
+@if(num1>num2){
+  @if(num1>num3){
+    num1 is greatest
+  }
+  @else{
+    num3 is greatest
+  }
+}
+@else if(num2>num3){
+  num2 is greatest
+}
+@else{
+  num3 is greatest
+} -->
+
+
+
+
+
+
+
+
+

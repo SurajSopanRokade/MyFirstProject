@@ -1,0 +1,20 @@
+<p>home works!</p>
+<app-about-us></app-about-us>
+<!-- Interpolation -->
+<h1>{{cityname}}</h1>
+<h1>{{getData()}}</h1>
+<!-- <img src="{{path}}" alt="logo"> -->
+
+<!-- Property Building -->
+<!-- <img [src]="path" alt="logo"> -->
+<input type="text" [disabled]="isdisabled" value="welcome">
+
+<!-- Event Binding -->
+<button (click)="onMyClick()">click me</button>
+<h1>{{msg}}</h1>
+
+<!-- Two way DataBinding -->
+<input type="text" [(ngModel)]="data"><br>
+<h1>Data={{data}}</h1>
+
+

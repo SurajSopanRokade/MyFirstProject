@@ -1,0 +1,32 @@
+<!-- pipeDemo1 -->
+<!-- normal -->
+<!-- <h1>{{msg}}</h1> -->
+<!-- using pipe -->
+<!-- <h1>{{msg | uppercase}}</h1>
+<h1>{{msg | lowercase}}</h1>
+<h1>{{msg | titlecase}}</h1> -->
+
+<!-- on number -->
+<!-- <h1>{{amount}}</h1>
+<h1>{{amount | currency:'INR'}}</h1>
+<h1>{{amount | currency:'INR':false}}</h1>
+<h1>{{amount | percent:'.2'}}</h1> -->
+
+<!-- On date -->
+<h1>{{today}}</h1>
+<h1>{{today | date}}</h1>
+<h1>{{today | date:'shortDate'}}</h1>
+<h1>{{today | date:'fullDate'}}</h1>
+<h1>{{today | date:'mediumDate'}}</h1>
+<h1>{{today | date:'HH:MM'}}</h1>
+<h1>{{today | date:'HH:MM:SS a'}}</h1>
+
+<!-- custome Pipe -->
+<h1>{{msg | wordCount}}</h1>
+
+<!-- ...args Demo -->
+<button (click)="show(10, 34, 56)">Click Me to Show Numbers</button>
+
+<!-- PowerFun Assign -->
+
+<!-- <h1>{{Base | powerFun:Expo}}</h1> -->
